@@ -1,22 +1,14 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Compilar Projeto",
-            "type": "shell",
-            "command": "g++",
-            "args": [
-                "-g",
-                "main.cpp",
-                "Pessoa.cpp",
-                "Cliente.cpp",
-                "-o",
-                "meu_programa"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Compilar com Make",
+			"type": "shell",
+			"command": "make",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
 }
