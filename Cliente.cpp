@@ -19,5 +19,5 @@ void Cliente::exibirDetalhes() const{
     cout << "ID do cliente: " << this->idCliente << endl;
     cout << "Nome: " << getNome() << endl;
     cout << "CPF: " << getCpf() <<endl;
-    cout << "Data de cadastro" << this-> dataCadastro << endl;
+    cout << "Data de cadastro: " << this-> dataCadastro << endl;
 }
