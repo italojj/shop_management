@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar projeto C++",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "*.cpp",
+                "-o",
+                "meu_programa"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
