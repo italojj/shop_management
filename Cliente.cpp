@@ -3,15 +3,15 @@
 
 using namespace std;
 
-Cliente::Cliente(int id, string nome, string cpf, string dataCadastro) : Pessoa(nome,cpf), idCliente(id) dataCadastro(dataCadastro){
+Cliente::Cliente(int id, string nome, string cpf, string dataCadastro) : Pessoa(nome,cpf), idCliente(id), dataCadastro(dataCadastro){
 
 }
 
 int Cliente::getIdCliente() const{
-    return this->idCliente
+    return this->idCliente;
 }
 string Cliente::getDatacadastro() const{
-    return this->dataCadastro
+    return this->dataCadastro;
 }
 
 void Cliente::exibirDetalhes() const{

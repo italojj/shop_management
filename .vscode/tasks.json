@@ -2,22 +2,21 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compilar projeto C++",
+            "label": "Compilar Projeto",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-g",
-                "*.cpp",
+                "main.cpp",
+                "Pessoa.cpp",
+                "Cliente.cpp",
                 "-o",
                 "meu_programa"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            }
         }
     ]
 }

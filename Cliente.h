@@ -2,7 +2,7 @@
 #include "Pessoa.h"
 #include <string>
 
-class Cliente :: public Pessoa {
+class Cliente : public Pessoa {
 private:
     int idCliente;
     std::string dataCadastro;
