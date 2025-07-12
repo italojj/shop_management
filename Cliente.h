@@ -4,7 +4,7 @@
 
 class Cliente :: public Pessoa {
 private:
-    int idCLiente;
+    int idCliente;
     std::string dataCadastro;
 
 public:
