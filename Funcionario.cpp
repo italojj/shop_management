@@ -14,6 +14,10 @@ string Funcionario::getCargo() const {
 double Funcionario::getSalario() const {
     return this->salario;
 }
+
+void Funcionario::exibirDetalhes() const{
+    cout << *this;
+}
     // atualização para friend
 ostream& operator<<(std::ostream& os, const Funcionario& f) {
     os << "Detalhes do Funcionario" << endl;
@@ -21,4 +25,5 @@ ostream& operator<<(std::ostream& os, const Funcionario& f) {
     os << "CPF: " << f.cpf << endl;
     os << "Cargo: " << f.cargo << endl;
     os << "Salario: R$ " << f.salario << endl;
+    return os;
 }

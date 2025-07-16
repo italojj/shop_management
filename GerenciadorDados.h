@@ -18,8 +18,9 @@ public:
 
     void listarTodos() const {
         if (itens.empty()){
-            std::cout << "Não há item cadastrado." << std::endl;        
-    }       return;
+            std::cout << "Não há item cadastrado." << std::endl;
+            return;    
+        }     
     for (const T& item : itens) {
         std:: cout << item << std::endl;
     }

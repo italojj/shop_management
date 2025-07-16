@@ -10,9 +10,13 @@ Cliente::Cliente(int id, string nome, string cpf, string dataCadastro) : Pessoa(
 int Cliente::getIdCliente() const{
     return this->idCliente;
 }
-string Cliente::getDatacadastro() const{
+string Cliente::getDataCadastro() const{
     return this->dataCadastro;
 }
+void Cliente::exibirDetalhes() const{
+    cout << *this;
+}
+
 //implementando função friend
 ostream& operator<<(ostream& os, const Cliente& c){
     os << "Detalhes do cliente: " << endl;
