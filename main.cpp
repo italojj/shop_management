@@ -1,9 +1,7 @@
-// main.cpp
-
 #include <iostream>
-#include <vector> // Incluir para usar o vector
+#include <vector>
 #include "Cliente.h"
-#include "Funcionario.h" // Incluir o novo arquivo
+#include "Funcionario.h"
 #include "Pessoa.h"
 #include "Produto.h"
 
