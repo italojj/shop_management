@@ -4,7 +4,7 @@ CXXFLAGS = -g -Wall
 
 TARGET = meu_programa
 
-SRCS = main.cpp Pessoa.cpp Cliente.cpp Funcionario.cpp
+SRCS = main.cpp Pessoa.cpp Cliente.cpp Funcionario.cpp Produto.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
