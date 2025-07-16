@@ -2,7 +2,7 @@ CXX = g++
 
 CXXFLAGS = -g -Wall
 
-TARGET = meu_programa
+TARGET = GerenciarLoja
 
 SRCS = main.cpp Pessoa.cpp Cliente.cpp Funcionario.cpp Produto.cpp
 
