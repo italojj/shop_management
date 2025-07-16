@@ -16,5 +16,5 @@ public:
     std::string getCargo() const;
     double getSalario() const;
 
-    void exibirDetalhes() const override;
+    friend std::ostream& operator<<(std::ostream& os, const Funcionario& f);
 };

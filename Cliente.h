@@ -11,5 +11,5 @@ public:
     Cliente(int id, std::string nome, std:: string cpf, std::string dataCadastro);
     int getIdCliente() const;
     std::string getDatacadastro() const;
-    void exibirDetalhes() const override;    
+    friend std::ostream& operator<<(std::ostream& os, const Cliente& c); //função friend para sobrecarga e funcionamento do make
 };

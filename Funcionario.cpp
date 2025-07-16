@@ -14,11 +14,11 @@ string Funcionario::getCargo() const {
 double Funcionario::getSalario() const {
     return this->salario;
 }
-    // Implementação do método obrigatório exibirDetalhes
-void Funcionario::exibirDetalhes() const {
-    cout << "Detalhes do Funcionario" << endl;
-    cout << "Nome: " << getNome() << endl;
-    cout << "CPF: " << getCpf() << endl;
-    cout << "Cargo: " << this->cargo << endl;
-    cout << "Salario: R$ " << this->salario << endl;
+    // atualização para friend
+ostream& operator<<(std::ostream& os, const Funcionario& f) {
+    os << "Detalhes do Funcionario" << endl;
+    os << "Nome: " << f.nome << endl;
+    os << "CPF: " << f.cpf << endl;
+    os << "Cargo: " << f.cargo << endl;
+    os << "Salario: R$ " << f.salario << endl;
 }
