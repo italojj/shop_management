@@ -1,18 +1,25 @@
 CXX = g++
 
-CXXFLAGS = -g -Wall
+CXXFLAGS = -g -Wall -Iinclude
 
 TARGET = GerenciarLoja
 
-SRCS = main.cpp Pessoa.cpp Cliente.cpp Funcionario.cpp Produto.cpp
+SRC_DIR = src
+INCLUDE_DIR = include
+BUILD_DIR = build
 
-OBJS = $(SRCS:.cpp=.o)
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+
+OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
-%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -rf $(BUILD_DIR) $(TARGET)
