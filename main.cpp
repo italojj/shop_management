@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <stdexcept>
+#include <vector>
 #include "Cliente.h"
 #include "Funcionario.h"
+#include "Pessoa.h"
 #include "Produto.h"
 #include "GerenciadorDados.h"
 
