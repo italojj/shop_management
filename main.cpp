@@ -10,7 +10,7 @@
 using namespace std;
 
 int main() {
-    Produto p1(001, "Maçã", 2.50, 10);
+    Produto p1(001, "Celular", 1000.50, 10);
     //teste de sobrecarga
     cout << p1 << endl << endl;
 
@@ -19,7 +19,7 @@ int main() {
 
     //é pra a exceção funcionar
     try{
-        p1.removerEstoque(15);
+        p1.removerEstoque(9);
     }
     catch (const out_of_range& e){
         cout << "Erro detectado" << e.what() << endl << endl;
