@@ -7,7 +7,7 @@
 
 //Template será uma classe genérica. T é apelido para qualquer tipo que usarmos
 template <typename T>
-class GerenciadorDeDados {
+class GerenciadorDados {
 private:
     std::vector<T> itens;
 
