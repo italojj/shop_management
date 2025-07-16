@@ -10,7 +10,7 @@
 using namespace std;
 
 int main() {
-    Produto p1(001, "Maçã", 2.50, 10)
+    Produto p1(001, "Maçã", 2.50, 10);
     //teste de sobrecarga
     cout << p1 << endl << endl;
 
