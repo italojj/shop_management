@@ -10,7 +10,7 @@ private:
     double salario;
 
 public:
-    Funcionario(std::string nome, std::string cpf, std::string cargo, double salario); // construtor para funcionarios
+    Funcionario(int id, std::string nome, std::string cpf, std::string cargo, double salario); // construtor para funcionarios
 
     //Getters da classe funcionario, atributos específicos
     std::string getCargo() const;
