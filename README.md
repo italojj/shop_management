@@ -72,8 +72,8 @@ SHOP_MANAGEMENT/
 
 ### Passo 1: Clone o Repositório
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/italojj/shop_management
+cd shop_management
 ```
 
 ### Passo 2: Compile o Projeto
