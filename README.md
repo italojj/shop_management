@@ -101,8 +101,7 @@ make clean
 - `Venda`: Representa uma venda completa.
 - `GerenciadorDados<T>`: Template para operações CRUD genéricas.
 
-##  Autor
-Autores: Italo Nascimento e Alvaro Feliphe  
+##  Autores
+Autores: Italo Nascimento e Alvaro Feliphe
 Universidade: Universidade Federal do Rio Grande do Norte
-
 Curso: Tecnologia da Informação
