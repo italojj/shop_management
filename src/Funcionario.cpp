@@ -3,10 +3,12 @@
 
 using namespace std;
 
-Funcionario::Funcionario(string nome, string cpf, string cargo, double salario) : Pessoa(nome, cpf), cargo(cargo), salario(salario){
-
-}
+Funcionario::Funcionario(int id, string nome, string cpf, string cargo, double salario)
+    : Pessoa(nome, cpf), idFuncionario(id), cargo(cargo), salario(salario) {}
 // Implementação dos getters
+int Funcionario::getId() const { 
+    return this->idFuncionario;
+} 
 string Funcionario::getCargo() const {  
     return this->cargo;
 }

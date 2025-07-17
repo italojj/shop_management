@@ -7,7 +7,7 @@ Cliente::Cliente(int id, string nome, string cpf, string dataCadastro) : Pessoa(
 
 }
 
-int Cliente::getIdCliente() const{
+int Cliente::getId() const {
     return this->idCliente;
 }
 string Cliente::getDataCadastro() const{
