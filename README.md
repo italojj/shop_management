@@ -102,6 +102,6 @@ make clean
 - `GerenciadorDados<T>`: Template para operações CRUD genéricas.
 
 ##  Autores
-Autores: Italo Nascimento e Alvaro Feliphe
-Universidade: Universidade Federal do Rio Grande do Norte
-Curso: Tecnologia da Informação
+- Autores: Italo Nascimento e Alvaro Feliphe
+- Universidade: Universidade Federal do Rio Grande do Norte
+- Curso: Tecnologia da Informação
