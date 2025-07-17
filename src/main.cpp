@@ -175,6 +175,8 @@ void menuFuncionarios(GerenciadorDados<Funcionario>& gerenciador) {
         cout << "╠══════════════════════╣\n";
         cout << "║ 1 - Adicionar        ║\n";
         cout << "║ 2 - Listar           ║\n";
+        cout << "║ 3 - Atualizar        ║\n";
+        cout << "║ 4 - Remover          ║\n";
         cout << "║ 0 - Voltar           ║\n";
         cout << "╚══════════════════════╝\n";
         cout << "Opção: ";
@@ -188,16 +190,40 @@ void menuFuncionarios(GerenciadorDados<Funcionario>& gerenciador) {
             cout << "CPF: "; getline(cin, cpf);
             cout << "Cargo: "; getline(cin, cargo);
             cout << "Salario: "; cin >> salario; limparBuffer();
-            // CORREÇÃO: Passando os argumentos corretos para o construtor de Funcionario
             gerenciador.adicionar(Funcionario(id, nome, cpf, cargo, salario));
             cout << "Funcionário adicionado com sucesso!" << endl;
         } else if (opcao == 2) {
             cout << "\n--- Lista de Funcionários ---\n";
             gerenciador.listarTodos();
+        } else if (opcao == 3) {
+            int id;
+            cout << "ID do funcionário para atualizar: "; cin >> id; limparBuffer();
+            try {
+                gerenciador.buscarPorId(id);
+                string nome, cpf, cargo; double salario;
+                cout << "Novo Nome: "; getline(cin, nome);
+                cout << "Novo CPF: "; getline(cin, cpf);
+                cout << "Novo Cargo: "; getline(cin, cargo);
+                cout << "Novo Salário: "; cin >> salario; limparBuffer();
+                gerenciador.atualizar(id, Funcionario(id, nome, cpf, cargo, salario));
+                cout << "Funcionário atualizado com sucesso!" << endl;
+            } catch (const exception& e) {
+                cout << "Erro: " << e.what() << endl;
+            }
+        } else if (opcao == 4) {
+            int id;
+            cout << "ID do funcionário para remover: "; cin >> id; limparBuffer();
+            if (gerenciador.remover(id)) {
+                cout << "Funcionário removido com sucesso!" << endl;
+            } else {
+                cout << "Erro: Funcionário não encontrado." << endl;
+            }
         }
+
         if(opcao != 0) { cout << "\nPressione Enter para continuar..."; cin.get(); }
     } while (opcao != 0);
 }
+
 
 
 void menuProdutos(GerenciadorDados<Produto>& gerenciador) {
@@ -209,6 +235,8 @@ void menuProdutos(GerenciadorDados<Produto>& gerenciador) {
         cout << "╠══════════════════╣\n";
         cout << "║ 1 - Adicionar    ║\n";
         cout << "║ 2 - Listar       ║\n";
+        cout << "║ 3 - Atualizar    ║\n";
+        cout << "║ 4 - Remover      ║\n";
         cout << "║ 0 - Voltar       ║\n";
         cout << "╚══════════════════╝\n";
         cout << "Opção: ";
@@ -221,16 +249,39 @@ void menuProdutos(GerenciadorDados<Produto>& gerenciador) {
             cout << "Nome: "; getline(cin, nome);
             cout << "Preço: "; cin >> preco;
             cout << "Estoque inicial: "; cin >> estoque; limparBuffer();
-            // CORREÇÃO: Passando os argumentos corretos para o construtor de Produto
             gerenciador.adicionar(Produto(id, nome, preco, estoque));
             cout << "Produto adicionado com sucesso!" << endl;
         } else if (opcao == 2) {
             cout << "\n--- Lista de Produtos ---\n";
             gerenciador.listarTodos();
+        } else if (opcao == 3) {
+            int id;
+            cout << "ID do produto para atualizar: "; cin >> id; limparBuffer();
+            try {
+                gerenciador.buscarPorId(id);
+                string nome; double preco; int estoque;
+                cout << "Novo Nome: "; getline(cin, nome);
+                cout << "Novo Preço: "; cin >> preco;
+                cout << "Novo Estoque: "; cin >> estoque; limparBuffer();
+                gerenciador.atualizar(id, Produto(id, nome, preco, estoque));
+                cout << "Produto atualizado com sucesso!" << endl;
+            } catch (const exception& e) {
+                cout << "Erro: " << e.what() << endl;
+            }
+        } else if (opcao == 4) {
+            int id;
+            cout << "ID do produto para remover: "; cin >> id; limparBuffer();
+            if (gerenciador.remover(id)) {
+                cout << "Produto removido com sucesso!" << endl;
+            } else {
+                cout << "Erro: Produto não encontrado." << endl;
+            }
         }
+
         if(opcao != 0) { cout << "\nPressione Enter para continuar..."; cin.get(); }
     } while (opcao != 0);
 }
+
 
 void menuFornecedores(GerenciadorDados<Fornecedor>& gerenciador) {
     int opcao;
@@ -241,6 +292,8 @@ void menuFornecedores(GerenciadorDados<Fornecedor>& gerenciador) {
         cout << "╠═══════════════════════╣\n";
         cout << "║ 1 - Adicionar         ║\n";
         cout << "║ 2 - Listar            ║\n";
+        cout << "║ 3 - Atualizar         ║\n";
+        cout << "║ 4 - Remover           ║\n";
         cout << "║ 0 - Voltar            ║\n";
         cout << "╚═══════════════════════╝\n";
         cout << "Opção: ";
@@ -257,10 +310,33 @@ void menuFornecedores(GerenciadorDados<Fornecedor>& gerenciador) {
         } else if (opcao == 2) {
             cout << "\n--- Lista de Fornecedores ---\n";
             gerenciador.listarTodos();
+        } else if (opcao == 3) {
+            int id;
+            cout << "ID do fornecedor para atualizar: "; cin >> id; limparBuffer();
+            try {
+                gerenciador.buscarPorId(id);
+                string nome, cnpj;
+                cout << "Novo Nome Fantasia: "; getline(cin, nome);
+                cout << "Novo CNPJ: "; getline(cin, cnpj);
+                gerenciador.atualizar(id, Fornecedor(id, nome, cnpj));
+                cout << "Fornecedor atualizado com sucesso!" << endl;
+            } catch (const exception& e) {
+                cout << "Erro: " << e.what() << endl;
+            }
+        } else if (opcao == 4) {
+            int id;
+            cout << "ID do fornecedor para remover: "; cin >> id; limparBuffer();
+            if (gerenciador.remover(id)) {
+                cout << "Fornecedor removido com sucesso!" << endl;
+            } else {
+                cout << "Erro: Fornecedor não encontrado." << endl;
+            }
         }
+
         if(opcao != 0) { cout << "\nPressione Enter para continuar..."; cin.get(); }
     } while (opcao != 0);
 }
+
 
 void menuVendas(GerenciadorDados<Venda>& gVendas, GerenciadorDados<Cliente>& gClientes, GerenciadorDados<Funcionario>& gFuncionarios, GerenciadorDados<Produto>& gProdutos) {
     system("clear || cls");
